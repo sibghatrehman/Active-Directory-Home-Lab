@@ -59,12 +59,10 @@ Skills Demonstrated
 Active Directory Domain Services · DNS/DHCP · Group Policy Management · PowerShell Scripting · NTFS & Share Permissions · Windows Server 2022 · VirtualBox · Troubleshooting
 
 Screenshots
-Add screenshots to /assets and reference them here, for example:
+Screenshots are attached in GITHUB Repo
 
-markdown
-![AD Users and Computers - OU structure](assets/adusers-ou-structure.png)
-![gpresult output](assets/gpresult-verification.png)
-![DHCP scope](assets/dhcp-scope.png)
+
+
 Resources Used
 Josh Madakor — How to Setup a Basic Home Lab Running Active Directory (Oracle VirtualBox) — the primary walkthrough for the AD DS build and bulk user creation via PowerShell
 Server Academy — Group Policy Tutorial for Beginners — used for GPO creation and linking
