@@ -1,0 +1,99 @@
+<svg viewBox="0 0 1200 820" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="1200" height="820" fill="#ffffff"/>
+
+  <text x="600" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#1a1a1a">
+    Active Directory Home Lab — Network Topology
+  </text>
+
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5b6472"/>
+    </marker>
+  </defs>
+
+  <!-- Home Router -->
+  <rect x="40" y="150" width="190" height="110" rx="12" fill="#eef3fb" stroke="#3b6fb5" stroke-width="2"/>
+  <text x="135" y="195" text-anchor="middle" font-size="16" font-weight="700" fill="#1a1a1a">Home Router</text>
+  <text x="135" y="216" text-anchor="middle" font-size="12" fill="#4a4a4a">(Internet / ISP)</text>
+  <text x="135" y="236" text-anchor="middle" font-size="12" fill="#4a4a4a">Hands out DHCP</text>
+
+  <!-- Line: Router to DC -->
+  <line x1="230" y1="205" x2="350" y2="205" stroke="#5b6472" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="290" y="192" text-anchor="middle" font-size="11" fill="#5b6472">NIC 1 (NAT)</text>
+  <text x="290" y="222" text-anchor="middle" font-size="10" fill="#8a8a8a">DHCP from router</text>
+
+  <!-- DC box -->
+  <rect x="350" y="120" width="300" height="180" rx="12" fill="#eaf6ee" stroke="#2f8f4e" stroke-width="2.5"/>
+  <text x="500" y="150" text-anchor="middle" font-size="17" font-weight="700" fill="#1a1a1a">DC01</text>
+  <text x="500" y="169" text-anchor="middle" font-size="12" fill="#4a4a4a">Windows Server 2022</text>
+  <line x1="375" y1="180" x2="625" y2="180" stroke="#bcd8c3" stroke-width="1"/>
+  <text x="500" y="200" text-anchor="middle" font-size="12" fill="#245c37">AD DS  |  DNS  |  DHCP</text>
+  <text x="500" y="220" text-anchor="middle" font-size="12" fill="#245c37">RAS / NAT (Routing)</text>
+  <text x="500" y="248" text-anchor="middle" font-size="11" fill="#4a4a4a">Domain FQDN: mydomain.com</text>
+  <text x="500" y="266" text-anchor="middle" font-size="11" fill="#4a4a4a">Internal IP: 172.16.0.1 /24</text>
+  <text x="500" y="284" text-anchor="middle" font-size="11" fill="#4a4a4a">DNS (self): 127.0.0.1</text>
+
+  <!-- Line: DC to internal network -->
+  <line x1="650" y1="205" x2="770" y2="205" stroke="#5b6472" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="710" y="192" text-anchor="middle" font-size="11" fill="#5b6472">NIC 2 (Internal)</text>
+  <text x="710" y="222" text-anchor="middle" font-size="10" fill="#8a8a8a">VirtualBox "intnet"</text>
+
+  <!-- Client box -->
+  <rect x="770" y="120" width="220" height="180" rx="12" fill="#f5eefb" stroke="#7a4bb0" stroke-width="2.5"/>
+  <text x="880" y="150" text-anchor="middle" font-size="17" font-weight="700" fill="#1a1a1a">Client1</text>
+  <text x="880" y="169" text-anchor="middle" font-size="12" fill="#4a4a4a">Windows 10</text>
+  <line x1="795" y1="180" x2="965" y2="180" stroke="#dcc9ef" stroke-width="1"/>
+  <text x="880" y="200" text-anchor="middle" font-size="12" fill="#582f85">Domain-joined</text>
+  <text x="880" y="220" text-anchor="middle" font-size="11" fill="#4a4a4a">(mydomain.com)</text>
+  <text x="880" y="248" text-anchor="middle" font-size="11" fill="#4a4a4a">IP: via DHCP from DC01</text>
+  <text x="880" y="266" text-anchor="middle" font-size="11" fill="#4a4a4a">Gateway/DNS: 172.16.0.1</text>
+
+  <!-- Info panels row -->
+  <!-- Panel 1: Domain / OUs -->
+  <rect x="40" y="350" width="330" height="200" rx="10" fill="#fbfbfb" stroke="#c9c9c9" stroke-width="1.5"/>
+  <text x="60" y="380" font-size="14" font-weight="700" fill="#1a1a1a">Domain &amp; OU Structure</text>
+  <text x="60" y="406" font-size="12" fill="#333">FQDN: mydomain.com</text>
+  <text x="60" y="428" font-size="12" fill="#333">_ADMINS  (a-srehman → Domain Admins)</text>
+  <text x="60" y="450" font-size="12" fill="#333">_USERS</text>
+  <text x="80" y="472" font-size="12" fill="#555">├─ IT</text>
+  <text x="80" y="494" font-size="12" fill="#555">├─ HR</text>
+  <text x="80" y="516" font-size="12" fill="#555">└─ Management</text>
+
+  <!-- Panel 2: DHCP -->
+  <rect x="400" y="350" width="330" height="200" rx="10" fill="#fbfbfb" stroke="#c9c9c9" stroke-width="1.5"/>
+  <text x="420" y="380" font-size="14" font-weight="700" fill="#1a1a1a">DHCP Scope</text>
+  <text x="420" y="406" font-size="12" fill="#333">Range: 172.16.0.100 – .200</text>
+  <text x="420" y="428" font-size="12" fill="#333">Subnet mask: 255.255.255.0</text>
+  <text x="420" y="450" font-size="12" fill="#333">Gateway (Option 3): 172.16.0.1</text>
+  <text x="420" y="472" font-size="12" fill="#333">DNS (Option 6): 172.16.0.1</text>
+  <text x="420" y="500" font-size="11" fill="#777">Scope authorized in AD;</text>
+  <text x="420" y="518" font-size="11" fill="#777">DC NIC2 fixed at 172.16.0.1</text>
+
+  <!-- Panel 3: GPOs -->
+  <rect x="760" y="350" width="330" height="200" rx="10" fill="#fbfbfb" stroke="#c9c9c9" stroke-width="1.5"/>
+  <text x="780" y="380" font-size="14" font-weight="700" fill="#1a1a1a">Group Policy Objects</text>
+  <text x="780" y="406" font-size="12" fill="#333">Password Complexity Policy</text>
+  <text x="780" y="428" font-size="12" fill="#333">USB / Removable Storage Restriction</text>
+  <text x="780" y="450" font-size="12" fill="#333">Desktop Wallpaper Enforcement</text>
+  <text x="780" y="478" font-size="11" fill="#777">Verified on Client1 with:</text>
+  <text x="780" y="498" font-size="12" font-family="Consolas, monospace" fill="#245c37">gpresult /r</text>
+
+  <!-- Lab components strip -->
+  <text x="60" y="610" font-size="14" font-weight="700" fill="#1a1a1a">Lab Components</text>
+  <rect x="40" y="625" width="220" height="50" rx="8" fill="#eef0f4" stroke="#a9afba" stroke-width="1.5"/>
+  <text x="150" y="656" text-anchor="middle" font-size="13" fill="#333">Oracle VirtualBox</text>
+
+  <rect x="280" y="625" width="260" height="50" rx="8" fill="#eef0f4" stroke="#a9afba" stroke-width="1.5"/>
+  <text x="410" y="656" text-anchor="middle" font-size="13" fill="#333">Windows Server 2022 ISO</text>
+
+  <rect x="560" y="625" width="220" height="50" rx="8" fill="#eef0f4" stroke="#a9afba" stroke-width="1.5"/>
+  <text x="670" y="656" text-anchor="middle" font-size="13" fill="#333">Windows 10 ISO</text>
+
+  <rect x="800" y="625" width="260" height="50" rx="8" fill="#eef0f4" stroke="#a9afba" stroke-width="1.5"/>
+  <text x="930" y="656" text-anchor="middle" font-size="13" fill="#333">PowerShell (bulk user script)</text>
+
+  <text x="600" y="750" text-anchor="middle" font-size="11" fill="#999">
+    VM specs: 4 GB RAM / 4 vCPU / 15 GB HDD per VM · NIC1 = NAT · NIC2 = Internal Network ("intnet")
+  </text>
+</svg>
