@@ -60,7 +60,7 @@ Active Directory Domain Services · DNS/DHCP · Group Policy Management · Power
 
 Screenshots
 Screenshots are attached in GITHUB Repo
-
+- **Follow-up project:** this lab has a companion — [hybrid-identity-lab](https://github.com/sibghatrehman/hybrid-identity-entra-connect.git) — which syncs these OU users to Microsoft Entra ID
 
 
 Resources Used
