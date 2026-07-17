@@ -1,11 +1,11 @@
 Overview
-This lab simulates a small business network with a single domain controller and a domain-joined client. The goal was to go beyond just following a tutorial and actually verify, break, and fix things the way an on-the-job admin would — including a real NTFS-vs-share-permission conflict encountered and resolved during the build.
-!(Topology-Diagram.png)
-Domain	mydomain.com
-Domain Controller	Windows Server 2022 — AD DS, DNS, DHCP, RAS/NAT
-Client	Windows 10 — domain-joined
-Hypervisor	Oracle VirtualBox
-Internal network	172.16.0.0/24 (VirtualBox "Internal Network" / intnet)
+This lab simulates a small business network with a single domain controller and a domain-joined client. The goal was to go beyond just following a tutorial and actually verify, break, and fix things the way an on-the-job admin would — including a real NTFS-vs-share-permission conflict encountered and resolved during the build.![AD-Home-Lab](Topology-Diagram.png)
+1. Domain	mydomain.com
+2. Domain Controller	Windows Server 2022 — AD DS, DNS, DHCP, RAS/NAT
+3. Client	Windows 10 — domain-joined
+4. Hypervisor	Oracle VirtualBox
+5. Internal network	172.16.0.0/24 (VirtualBox "Internal Network" / intnet)
+6. 
 Architecture
 DC01 runs two NICs: one on NAT (for internet access via the home router), one on an isolated Internal Network handing out addressing for the lab.
 DC01 acts as the router for the internal subnet (RAS/NAT), DNS server, and DHCP server (scope 172.16.0.100–.200).
