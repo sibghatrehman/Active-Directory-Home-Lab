@@ -1,6 +1,6 @@
 Overview
 This lab simulates a small business network with a single domain controller and a domain-joined client. The goal was to go beyond just following a tutorial and actually verify, break, and fix things the way an on-the-job admin would — including a real NTFS-vs-share-permission conflict encountered and resolved during the build.
-
+!(Topology-Diagram.png)
 Domain	mydomain.com
 Domain Controller	Windows Server 2022 — AD DS, DNS, DHCP, RAS/NAT
 Client	Windows 10 — domain-joined
