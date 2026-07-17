@@ -5,7 +5,7 @@ This lab simulates a small business network with a single domain controller and 
 3. Client	Windows 10 — domain-joined
 4. Hypervisor	Oracle VirtualBox
 5. Internal network	172.16.0.0/24 (VirtualBox "Internal Network" / intnet)
-6. 
+
 Architecture
 DC01 runs two NICs: one on NAT (for internet access via the home router), one on an isolated Internal Network handing out addressing for the lab.
 DC01 acts as the router for the internal subnet (RAS/NAT), DNS server, and DHCP server (scope 172.16.0.100–.200).
@@ -59,7 +59,12 @@ Skills Demonstrated
 Active Directory Domain Services · DNS/DHCP · Group Policy Management · PowerShell Scripting · NTFS & Share Permissions · Windows Server 2022 · VirtualBox · Troubleshooting
 
 Screenshots
-Screenshots are attached in GITHUB Repo
+![AD-Home-Lab](DC.png)
+![AD-Home-Lab](DHCP.png)
+![AD-Home-Lab](GPOs.png)
+![AD-Home-Lab](gporesult.png)
+![AD-Home-Lab](Client_Ipconfig.png)
+![AD-Home-Lab](AD_Users.png)
 - **Follow-up project:** this lab has a companion — [hybrid-identity-lab](https://github.com/sibghatrehman/hybrid-identity-entra-connect.git) — which syncs these OU users to Microsoft Entra ID
 
 
